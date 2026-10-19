@@ -1,0 +1,418 @@
+/* =========================================================
+   Archivo: estilos.css
+   Estudiante: Sneider Stalin Villamar Peñafiel
+   Asignatura: Aplicaciones Web - Unidad 1 (UPS)
+   ========================================================= */
+
+/* 1. Variables CSS para mantener consistencia de colores */
+:root {
+  --azul-ups: #003366;
+  --azul-claro: #0055a5;
+  --amarillo-ups: #ffcc00;
+  --fondo-pagina: #f4f6f9;
+  --fondo-blanco: #ffffff;
+  --texto-principal: #222222;
+  --texto-secundario: #444444;
+  --borde-gris: #cccccc;
+  --rojo-error: #b91c1c;
+  --verde-exito: #15803d;
+}
+
+/* 2. Ajustes generales y Modelo de Caja (Box Model) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--fondo-pagina);
+  color: var(--texto-principal);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Imágenes fluidas para que nunca se salgan de la pantalla */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Foco visible para navegar fácilmente con la tecla Tab */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--amarillo-ups);
+  outline-offset: 2px;
+}
+
+/* Enlace para saltar directo al contenido con el teclado */
+.saltar-contenido {
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  background-color: var(--amarillo-ups);
+  color: #000000;
+  padding: 8px 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.saltar-contenido:focus {
+  top: 10px;
+}
+
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* =========================================================
+   3. ENCABEZADO Y NAVEGACIÓN (Diseño Base Mobile-First)
+   ========================================================= */
+header {
+  background-color: var(--azul-ups);
+  color: var(--fondo-blanco);
+  padding: 12px 0;
+  border-bottom: 4px solid var(--amarillo-ups);
+}
+
+.barra-superior {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titulo-sitio {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--fondo-blanco);
+  text-decoration: none;
+}
+
+.boton-menu {
+  background-color: var(--amarillo-ups);
+  color: #000000;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* En celular el menú inicia oculto y se abre con JavaScript */
+.lista-navegacion {
+  display: none;
+  width: 100%;
+  list-style: none;
+  padding: 10px 0 0 0;
+  margin: 10px 0 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.lista-navegacion.activo {
+  display: block;
+}
+
+.lista-navegacion li {
+  margin-bottom: 8px;
+}
+
+.lista-navegacion a {
+  color: var(--fondo-blanco);
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+.lista-navegacion a:hover {
+  background-color: var(--azul-claro);
+}
+
+/* =========================================================
+   4. SECCIONES Y TARJETAS (Mobile-First: 1 sola columna)
+   ========================================================= */
+section {
+  background-color: var(--fondo-blanco);
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid var(--borde-gris);
+  border-radius: 8px;
+}
+
+h1 {
+  color: var(--azul-ups);
+  font-size: 1.6rem;
+  margin-top: 0;
+}
+
+h2 {
+  color: var(--azul-ups);
+  font-size: 1.35rem;
+  border-bottom: 2px solid var(--amarillo-ups);
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+
+h3 {
+  color: var(--azul-claro);
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+figure {
+  margin: 16px 0;
+  padding: 10px;
+  background-color: var(--fondo-pagina);
+  border: 1px solid var(--borde-gris);
+  border-radius: 6px;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  margin-top: 8px;
+}
+
+/* Botones de filtro para las materias */
+.botones-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.btn-filtro {
+  background-color: #e2e8f0;
+  color: var(--texto-principal);
+  border: 1px solid #94a3b8;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-filtro.seleccionado {
+  background-color: var(--azul-ups);
+  color: var(--fondo-blanco);
+  border-color: var(--azul-ups);
+}
+
+/* Grilla de tarjetas: 1 columna en móvil */
+.grilla-tarjetas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.tarjeta {
+  background-color: var(--fondo-pagina);
+  border: 1px solid var(--borde-gris);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.etiqueta {
+  display: inline-block;
+  background-color: var(--azul-ups);
+  color: var(--fondo-blanco);
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+/* =========================================================
+   5. TABLA DE HORARIOS Y BLOQUE ASIDE
+   ========================================================= */
+.contenedor-tabla {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid var(--borde-gris);
+  padding: 10px;
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--azul-ups);
+  color: var(--fondo-blanco);
+}
+
+tfoot td {
+  background-color: #e2e8f0;
+  font-weight: bold;
+}
+
+aside {
+  background-color: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 14px;
+  margin-top: 16px;
+}
+
+/* =========================================================
+   6. FORMULARIO DE INSCRIPCIÓN
+   ========================================================= */
+fieldset {
+  border: 1px solid var(--borde-gris);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--azul-ups);
+  padding: 0 6px;
+}
+
+.grupo-campo {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #888888;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.boton-enviar {
+  background-color: var(--azul-ups);
+  color: var(--fondo-blanco);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-enviar:hover {
+  background-color: var(--azul-claro);
+}
+
+.boton-limpiar {
+  background-color: #e2e8f0;
+  color: var(--texto-principal);
+  border: 1px solid #94a3b8;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.mensaje-formulario {
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 14px;
+  display: none;
+}
+
+.mensaje-formulario.error {
+  display: block;
+  background-color: #fef2f2;
+  color: var(--rojo-error);
+  border: 1px solid var(--rojo-error);
+}
+
+.mensaje-formulario.exito {
+  display: block;
+  background-color: #f0fdf4;
+  color: var(--verde-exito);
+  border: 1px solid var(--verde-exito);
+}
+
+/* =========================================================
+   7. PIE DE PÁGINA
+   ========================================================= */
+footer {
+  background-color: var(--azul-ups);
+  color: var(--fondo-blanco);
+  text-align: center;
+  padding: 20px 16px;
+  margin-top: 30px;
+}
+
+footer a {
+  color: var(--amarillo-ups);
+}
+
+/* =========================================================
+   8. MEDIA QUERIES (Adaptaciones para Tableta y Escritorio)
+   ========================================================= */
+
+/* Adaptación 1: Tabletas (mínimo 768px) -> Grilla pasa a 2 columnas */
+@media (min-width: 768px) {
+  .grilla-tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .campos-en-fila {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Adaptación 2: Escritorio (mínimo 1024px) -> Menú horizontal y 3 columnas */
+@media (min-width: 1024px) {
+  .boton-menu {
+    display: none;
+  }
+
+  .lista-navegacion {
+    display: flex !important;
+    width: auto;
+    border-top: none;
+    margin: 0;
+    padding: 0;
+    gap: 12px;
+  }
+
+  .lista-navegacion li {
+    margin-bottom: 0;
+  }
+
+  .inicio-dos-columnas {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .grilla-tarjetas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

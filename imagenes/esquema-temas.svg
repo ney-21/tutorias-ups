@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 260" width="500" height="260" role="img" aria-label="Esquema básico de desarrollo web con HTML, CSS y JavaScript">
+  <rect width="500" height="260" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+  <rect x="35" y="55" width="125" height="140" rx="8" fill="#ffffff" stroke="#003366" stroke-width="2"/>
+  <text x="97" y="110" text-anchor="middle" fill="#003366" font-family="Arial, sans-serif" font-size="20" font-weight="bold">HTML</text>
+  <text x="97" y="140" text-anchor="middle" fill="#555555" font-family="Arial, sans-serif" font-size="13">Estructura</text>
+
+  <rect x="187" y="55" width="125" height="140" rx="8" fill="#ffffff" stroke="#0055a5" stroke-width="2"/>
+  <text x="249" y="110" text-anchor="middle" fill="#0055a5" font-family="Arial, sans-serif" font-size="20" font-weight="bold">CSS</text>
+  <text x="249" y="140" text-anchor="middle" fill="#555555" font-family="Arial, sans-serif" font-size="13">Diseño y Color</text>
+
+  <rect x="340" y="55" width="125" height="140" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+  <text x="402" y="110" text-anchor="middle" fill="#b45309" font-family="Arial, sans-serif" font-size="20" font-weight="bold">JS</text>
+  <text x="402" y="140" text-anchor="middle" fill="#555555" font-family="Arial, sans-serif" font-size="13">Interacción</text>
+</svg>

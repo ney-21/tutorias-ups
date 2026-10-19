@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" height="320" role="img" aria-label="Ilustración de estudiantes compartiendo apuntes y una laptop en la universidad">
+  <rect width="600" height="320" rx="10" fill="#e8f0fe"/>
+  <rect x="40" y="40" width="520" height="240" rx="8" fill="#ffffff" stroke="#003366" stroke-width="3"/>
+  <!-- Laptop simple -->
+  <rect x="190" y="90" width="220" height="130" rx="6" fill="#003366"/>
+  <rect x="202" y="102" width="196" height="106" fill="#f8fafc"/>
+  <text x="300" y="145" text-anchor="middle" fill="#003366" font-family="Arial, sans-serif" font-size="20" font-weight="bold">&lt;HTML5 / CSS3&gt;</text>
+  <text x="300" y="175" text-anchor="middle" fill="#0055a5" font-family="Arial, sans-serif" font-size="15">Club de Tutorías UPS</text>
+  <polygon points="160,220 440,220 460,238 140,238" fill="#94a3b8"/>
+  <text x="300" y="265" text-anchor="middle" fill="#333333" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Aprendizaje colaborativo entre compañeros</text>
+</svg>

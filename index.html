@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorías Estudiantiles UPS | Iniciativa Académica</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Enlace para saltar al contenido principal con la tecla Tab -->
+  <a href="#contenido-principal" class="saltar-contenido">Saltar al contenido principal</a>
+
+  <!-- Encabezado y Menú de Navegación -->
+  <header>
+    <div class="contenedor barra-superior">
+      <a href="#inicio" class="titulo-sitio">Tutorías Estudiantiles UPS</a>
+
+      <button type="button" id="boton-menu" class="boton-menu" aria-expanded="false" aria-controls="menu-navegacion">
+        ☰ Menú
+      </button>
+
+      <nav aria-label="Menú principal">
+        <ul id="menu-navegacion" class="lista-navegacion">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#materias">Materias</a></li>
+          <li><a href="#horarios">Horarios</a></li>
+          <li><a href="#registro">Inscripción</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Principal del Sitio (4 Secciones) -->
+  <main id="contenido-principal" class="contenedor">
+
+    <!-- SECCIÓN 1: Presentación de la Iniciativa Académica -->
+    <section id="inicio">
+      <div class="inicio-dos-columnas">
+        <div>
+          <h1>Programa de Tutorías Entre Compañeros — Carrera de Computación</h1>
+          <p>
+            Bienvenido al espacio de apoyo académico estudiantil de la <strong>Universidad Politécnica Salesiana (Sede Guayaquil)</strong>. Esta iniciativa conecta a estudiantes de semestres superiores con compañeros que desean reforzar sus conocimientos en programación, desarrollo web y matemáticas.
+          </p>
+          <p>
+            Todas las sesiones son gratuitas, prácticas y se realizan tanto en los laboratorios del campus como en modalidad virtual.
+          </p>
+          <p>
+            <a href="#registro" class="boton-enviar" style="display:inline-block; text-decoration:none;">Inscribirme a una Tutoría</a>
+          </p>
+        </div>
+
+        <figure>
+          <img src="imagenes/tutoria-web.svg" alt="Ilustración de una laptop con código HTML5 y CSS3 del Club de Tutorías UPS" width="600" height="320">
+          <figcaption>Figura 1. Apoyo académico colaborativo entre estudiantes de la UPS.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Materias Disponibles (Con Filtro en JavaScript) -->
+    <section id="materias">
+      <h2>Materias y Talleres de Refuerzo</h2>
+      <p>Selecciona una categoría para filtrar los grupos de estudio disponibles este semestre:</p>
+
+      <div class="botones-filtro" role="group" aria-label="Filtrar materias por área">
+        <button type="button" class="btn-filtro seleccionado" data-categoria="todas">Todas (6)</button>
+        <button type="button" class="btn-filtro" data-categoria="web">Desarrollo Web</button>
+        <button type="button" class="btn-filtro" data-categoria="programacion">Programación</button>
+        <button type="button" class="btn-filtro" data-categoria="basicas">Ciencias Básicas</button>
+      </div>
+
+      <p id="contador-materias" aria-live="polite" style="font-weight:bold; color:#003366;">
+        Mostrando 6 tutorías disponibles.
+      </p>
+
+      <div class="grilla-tarjetas">
+        <article class="tarjeta tarjeta-materia" data-categoria="web">
+          <span class="etiqueta">Desarrollo Web</span>
+          <h3>HTML5 Semántico y Formularios</h3>
+          <p>Repaso práctico de etiquetas estructurales, tablas, imágenes con texto alternativo y creación de formularios accesibles.</p>
+        </article>
+
+        <article class="tarjeta tarjeta-materia" data-categoria="web">
+          <span class="etiqueta">Desarrollo Web</span>
+          <h3>Maquetación con CSS3 y Flexbox</h3>
+          <p>Uso del modelo de caja (Box Model), selectores, variables de color y diseño adaptable a celulares con Media Queries.</p>
+        </article>
+
+        <article class="tarjeta tarjeta-materia" data-categoria="web">
+          <span class="etiqueta">Desarrollo Web</span>
+          <h3>JavaScript Básico y DOM</h3>
+          <p>Prácticas con variables, arreglos, funciones, eventos de clic y manipulación de elementos HTML desde el navegador.</p>
+        </article>
+
+        <article class="tarjeta tarjeta-materia" data-categoria="programacion">
+          <span class="etiqueta">Programación</span>
+          <h3>Lógica de Programación y Algoritmos</h3>
+          <p>Resolución de ejercicios con estructuras condicionales (if/else) y ciclos repetitivos (for, while) paso a paso.</p>
+        </article>
+
+        <article class="tarjeta tarjeta-materia" data-categoria="programacion">
+          <span class="etiqueta">Programación</span>
+          <h3>Programación Orientada a Objetos</h3>
+          <p>Clases, objetos, métodos y buenas prácticas para organizar proyectos académicos de programación.</p>
+        </article>
+
+        <article class="tarjeta tarjeta-materia" data-categoria="basicas">
+          <span class="etiqueta">Ciencias Básicas</span>
+          <h3>Matemáticas Discretas y Lógica</h3>
+          <p>Refuerzo en tablas de verdad, teoría de conjuntos, grafos y preparación para exámenes parciales.</p>
+        </article>
+      </div>
+
+      <figure style="margin-top:20px;">
+        <img src="imagenes/esquema-temas.svg" alt="Esquema de los tres pilares estudiados: HTML para estructura, CSS para diseño y JS para interacción" width="500" height="260" loading="lazy">
+        <figcaption>Figura 2. Pilares fundamentales que practicamos en las sesiones de Aplicaciones Web.</figcaption>
+      </figure>
+    </section>
+
+    <!-- SECCIÓN 3: Tabla de Horarios y Requisitos -->
+    <section id="horarios">
+      <h2>Horarios de Atención Semanal</h2>
+      <p>Consulta los días, salones y compañeros encargados de cada grupo de estudio:</p>
+
+      <div class="contenedor-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Materia / Taller</th>
+              <th scope="col">Día y Hora</th>
+              <th scope="col">Lugar / Aula</th>
+              <th scope="col">Modalidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML5, CSS3 y Diseño Responsivo</td>
+              <td>Martes 14:00 - 16:00</td>
+              <td>Laboratorio de Cómputo 2</td>
+              <td>Presencial</td>
+            </tr>
+            <tr>
+              <td>JavaScript Básico y DOM</td>
+              <td>Jueves 15:00 - 17:00</td>
+              <td>Laboratorio de Cómputo 3</td>
+              <td>Presencial</td>
+            </tr>
+            <tr>
+              <td>Lógica de Programación</td>
+              <td>Viernes 10:00 - 12:00</td>
+              <td>Biblioteca Campus Centenario</td>
+              <td>Híbrida</td>
+            </tr>
+            <tr>
+              <td>Matemáticas Discretas</td>
+              <td>Sábado 09:00 - 11:00</td>
+              <td>Sala Zoom Institucional</td>
+              <td>Virtual</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">Nota: Recuerda llevar tu laptop con Visual Studio Code y la extensión Live Server instalada.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <aside aria-label="Requisitos para asistir">
+        <h3>¿Qué necesitas para participar?</h3>
+        <ul>
+          <li>Ser estudiante matriculado en la Universidad Politécnica Salesiana.</li>
+          <li>Tener instalado <strong>Visual Studio Code</strong> para los talleres prácticos de código.</li>
+          <li>Registrarte previamente en el formulario inferior para separar tu cupo.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- SECCIÓN 4: Formulario de Inscripción con Etiquetas Asociadas -->
+    <section id="registro">
+      <h2>Formulario de Inscripción a Tutorías</h2>
+      <p>Completa tus datos para separar tu cupo gratuito en las sesiones de esta semana:</p>
+
+      <!-- Mensaje dinámico controlado por JavaScript -->
+      <div id="mensaje-estado" class="mensaje-formulario" role="status" aria-live="polite"></div>
+
+      <form id="formulario-tutoria" novalidate>
+        <fieldset>
+          <legend>Datos del Estudiante</legend>
+
+          <div class="campos-en-fila">
+            <div class="grupo-campo">
+              <label for="nombre">Nombre y Apellido (*):</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej. Sneider Villamar" required>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="correo">Correo Institucional UPS (*):</label>
+              <input type="email" id="correo" name="correo" placeholder="usuario@est.ups.edu.ec" required>
+            </div>
+          </div>
+
+          <div class="campos-en-fila">
+            <div class="grupo-campo">
+              <label for="materia">Materia de interés (*):</label>
+              <select id="materia" name="materia" required>
+                <option value="">-- Selecciona una materia --</option>
+                <option value="HTML5 y CSS3 Responsivo">HTML5 y CSS3 Responsivo</option>
+                <option value="JavaScript Básico y DOM">JavaScript Básico y DOM</option>
+                <option value="Lógica de Programación">Lógica de Programación</option>
+                <option value="Matemáticas Discretas">Matemáticas Discretas</option>
+              </select>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="horario">Horario preferido:</label>
+              <select id="horario" name="horario">
+                <option value="Martes 14:00">Martes 14:00 - 16:00</option>
+                <option value="Jueves 15:00">Jueves 15:00 - 17:00</option>
+                <option value="Viernes 10:00">Viernes 10:00 - 12:00</option>
+                <option value="Sábado 09:00">Sábado 09:00 - 11:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="comentario">¿Qué tema específico te gustaría repasar? (Opcional):</label>
+            <textarea id="comentario" name="comentario" rows="3" placeholder="Ej. Cómo usar Flexbox, Media Queries o validación de formularios..."></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="boton-enviar">Registrar Inscripción</button>
+        <button type="reset" class="boton-limpiar">Limpiar Datos</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Pie de Página -->
+  <footer>
+    <div class="contenedor">
+      <p><strong>Universidad Politécnica Salesiana — Sede Guayaquil</strong></p>
+      <p>Elaborado por: <strong>Sneider Stalin Villamar Peñafiel</strong> | Asignatura: Aplicaciones Web (Unidad 1)</p>
+      <p>
+        Contacto: <a href="mailto:svillamarp@est.ups.edu.ec">svillamarp@est.ups.edu.ec</a> |
+        <a href="https://www.ups.edu.ec" target="_blank" rel="noopener noreferrer">Sitio Web UPS</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
